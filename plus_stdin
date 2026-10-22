@@ -1,21 +1,17 @@
 #!/usr/bin/python3
 # SPDX-FileCopyrightText: 2026 Kotsubu harunayamagishi1@gmail.com
+# SPDX-License-Identifier: BSD-3-Clause
 import sys
 
-x = 0.0                    #合計を入れる変数を0で初期化
-for n in sys.argv[1:]:     #[1:]でコマンド名（0番）を除く
-    x += float(n)          #x = x + float(n) と同じ
 
-plus, minus ,zero = 0, 0, 0
+def tonum(s):
+    try:
+        return int(s)
+    except ValueError:
+        return float(s)
 
-for n in sys.argv[1:]:
-    if float(n) < 0.0 :
-        minus += 1
-    elif float(n) > 0.0 :
-        plus += 1
-    else:
-        zero += 1
+x = 0
+for line in sys.stdin:
+    x += tonum(line)
 
-print("正:",plus)
-print("負:",minus)
-print("ゼロ:",zero)
+print(x)
