@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# SPDX-FileCopyrightText: 2026 Kotsubu harunayamagishi1@gmail.com
 import sys
 
 x = 0.0                    #合計を入れる変数を0で初期化
